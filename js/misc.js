@@ -11,7 +11,7 @@ function debug(ex, level, trusted) {
 }
 
 function inherit(derived, base) {
-  for (property in base) {
+  for (var property in base) {
     if (!derived[property]) {
       derived[property] = base[property];
     }

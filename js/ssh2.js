@@ -15,6 +15,7 @@ ssh2Mozilla.prototype = {
   tunnels      : '',
 
   // internal variables
+  privatekey   : "",
   channels     : {},
   refreshRate  : 10,
   transport    : null,
@@ -68,7 +69,7 @@ ssh2Mozilla.prototype = {
 
     this.client = new paramikojs.SSHClient();
     this.transport = this.client.connect(this.observer, write, auth_success,
-                                      this.host, parseInt(this.port), this.login, this.password, null, null);
+                                      this.host, parseInt(this.port), this.login, this.password, this.privatekey);
   },
 
   cleanup : function(isAbort) {
@@ -157,7 +158,7 @@ ssh2Mozilla.prototype = {
         var self = this;
         var wait_callback = function() {
           self.send_output(key);
-        }
+        };
         setTimeout(wait_callback, this.refreshRate);
         return;
       }

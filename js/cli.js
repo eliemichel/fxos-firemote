@@ -2029,7 +2029,7 @@ cli.prototype = {
     // String can be of the form: rgb:00/00/00
     parsedColor = parsedColor.replace('rgb:', '');
     parsedColor = parsedColor.replace(/\//g, '');
-    if (parsedColor.indexOf('#') != 0) {
+    if (parsedColor.indexOf('#') !== 0) {
       parsedColor = '#' + parsedColor;
     }
     this.xtermColors[colorToSet] = parsedColor;

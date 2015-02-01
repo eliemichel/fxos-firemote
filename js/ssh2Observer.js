@@ -30,6 +30,6 @@ ssh2Observer.prototype = {
     var response = gPromptService.confirmEx(window, gStrbundle.getString("sftpCacheTitle"),
                                                     gStrbundle.getFormattedString("sftpCache", [key]), flags,
                                                     null, null, null, null, {});
-    cacheCallback(response == 0 ? 'y' : (response == 2 ? 'n' : ''));
+    cacheCallback(response === 0 ? 'y' : (response == 2 ? 'n' : ''));
   }
 };

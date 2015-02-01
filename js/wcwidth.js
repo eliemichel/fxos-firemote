@@ -186,7 +186,7 @@
         }
 
        return false;
-    }
+    };
 
     option = {
         nul:     0,
